@@ -1,0 +1,32 @@
+<!--<h2 mat-dialog-title>{{ data?.title }}</h2>-->
+<!--<div mat-dialog-content>-->
+<!--  <p>dfsdfsfsfdsdfsfsdfs</p>-->
+<!--  <p>dfsdfsfsfdsdfsfsdfs</p>-->
+<!--  <p>dfsdfsfsfdsdfsfsdfs</p>-->
+<!--  <p>dfsdfsfsfdsdfsfsdfs</p>-->
+
+
+
+<!--</div>-->
+
+<!--<div mat-dialog-actions>-->
+<!--<button mat-button mat-dialog-close>Cancel</button>-->
+<!--<button mat-button [mat-dialog-close]="'CLOSE'">Confirm</button>-->
+<!--</div>-->
+
+
+
+
+
+<h1 mat-dialog-title>Nombre de la Tarea: {{nombreTarea}}</h1>
+<div mat-dialog-content>
+  <p>¿Esta seguro de editar esta tarea?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Tarea</mat-label>
+    <input matInput [(ngModel)]="data">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+<button mat-button mat-dialog-close>Cancelar</button>
+<button mat-button [mat-dialog-close]="data">Confirmar</button>
+</div>

@@ -1,0 +1,50 @@
+<div class="card mt-4">
+  <div class="card-body">
+    <div class="input-group">
+      <input id="myInput" type="text" placeholder="Agregar Carpetas" class="form-control form-control-lg"
+             [(ngModel)]="carpeta">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-success btn-lg"
+                (click)="agregarCarpeta()" onclick="document.getElementById('myInput').value = ''"
+                [disabled]="carpeta == ''"
+        >Agregar</button>
+      </div>
+    </div>
+    <br>
+    <h5 *ngIf="listCarpetas.length == 0">No hay carpetas</h5>
+    <ul class="list-group">
+
+
+
+
+      <li *ngFor="let carpeta of listCarpetas; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+
+
+        <span class="cursor" (click)="actualizarCarpeta(carpeta, i)" [class.text-succes]="carpeta.estado">
+          <i [ngClass]="carpeta.estado ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+        </span>
+
+        {{ carpeta.nombre }}
+
+
+        <span class="text-danger cursor" (click)="eliminarCarpeta(i)">
+          <i class="far fa-trash-alt"></i>
+        </span>
+
+        <span class="text-danger cursor">
+          <i class="fas fa-list" (click)="verTareas()">Ver Tareas</i>
+        </span>
+
+
+
+
+
+      </li>
+
+
+
+    </ul>
+  </div>
+</div>
+
+
